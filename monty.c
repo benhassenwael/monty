@@ -19,6 +19,13 @@ void run_op(stack_t **stack, char *op_cmd, unsigned int line_nb)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
+		{"nop", _nop},
+		{"add", _add},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 
