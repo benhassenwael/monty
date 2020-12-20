@@ -25,7 +25,6 @@ void run_op(stack_t **stack, char *op_cmd, unsigned int line_nb)
 	{
 		if (!strcmp(op_cmd, op_code[i].opcode))
 		{
-			printf("[%u]cmd: %s\n", line_nb, op_cmd);
 			op_code[i].f(stack, line_nb);
 			return;
 		}
