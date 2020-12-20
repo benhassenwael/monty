@@ -26,6 +26,8 @@ void run_op(stack_t **stack, char *op_cmd, unsigned int line_nb)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
@@ -73,7 +75,7 @@ int main(int argc, char **argv)
 	{
 		line_nb += 1;
 		op_cmd = strtok(*buffer_ptr, "\t \n\r");
-		if (op_cmd)
+		if (op_cmd && op_cmd[0] != '#')
 		{
 			run_op(&stack, op_cmd, line_nb);
 		}
