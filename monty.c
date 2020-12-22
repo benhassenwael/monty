@@ -2,6 +2,7 @@
 
 FILE *f;
 char **buffer_ptr;
+int queue = 0;
 
 
 /**
@@ -28,6 +29,10 @@ void run_op(stack_t **stack, char *op_cmd, unsigned int line_nb)
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{"stack", _stack},
+		{"queue", _queue},
 		{NULL, NULL}
 	};
 

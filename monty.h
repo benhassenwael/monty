@@ -7,6 +7,7 @@
 
 extern char **buffer_ptr;
 extern FILE *f;
+extern int queue;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,5 +54,9 @@ void _sub(stack_t **, unsigned int line_number);
 void _mod(stack_t **, unsigned int line_number);
 void _pchar(stack_t **, unsigned int line_number);
 void _pstr(stack_t **, unsigned int line_number);
+void _rotl(stack_t **, unsigned int line_number);
+void _rotr(stack_t **, unsigned int line_number);
+void _stack(stack_t **, unsigned int line_number);
+void _queue(stack_t **, unsigned int line_number);
 
 #endif /* _MONTY_H_ */

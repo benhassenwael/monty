@@ -28,6 +28,36 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 }
 
 /**
+ * add_dnodeint_end - add anew node at the end of
+ * a dlistint_t list
+ * @head: pointer to the head of the list
+ * @n: data of the new node
+ *
+ * Return: pointer to the new node or NULL on failure
+ */
+stack_t *add_dnodeint_end(stack_t **head, const int n)
+{
+	stack_t *node, *looper;
+
+	if (!head)
+		return (NULL);
+	node = malloc(sizeof(stack_t));
+	if (!node)
+		return (NULL);
+	node->n = n;
+	node->next = NULL;
+	looper = *head;
+	while (looper && looper->next)
+		looper = looper->next;
+	node->prev = looper;
+	if (!looper)
+		*head = node;
+	else
+		looper->next = node;
+	return (node);
+}
+
+/**
  * isnumber - check if agiven string is a number (taking into account
  * the '-' character at the start)
  * @s: string may start with '-'
@@ -67,5 +97,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		free_and_exit(stack);
 	}
 	arg_i = atoi(arg_s);
-	add_dnodeint(stack, arg_i);
+	if (queue)
+		add_dnodeint_end(stack, arg_i);
+	else
+		add_dnodeint(stack, arg_i);
 }
